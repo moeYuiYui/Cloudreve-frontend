@@ -116,7 +116,7 @@ export default function OneDriveGuide(props) {
         SecretKey: "",
         AccessKey: "",
         BaseURL: "",
-        Server: "https://graph.microsoft.com/v1.0",
+        Server: "https://graph.microsoft.com/v1.0/me",
         IsPrivate: "true",
         DirNameRule: "uploads/{year}/{month}/{day}",
         AutoRename: "true",
@@ -202,7 +202,7 @@ export default function OneDriveGuide(props) {
         policyCopy.OptionsSerialized = { ...policyCopy.OptionsSerialized };
 
         // baseURL处理
-        if (policyCopy.Server === "https://graph.microsoft.com/v1.0"){
+        if (policyCopy.Server === "https://graph.microsoft.com/v1.0/me"){
             policyCopy.BaseURL = "https://login.microsoftonline.com/common/oauth2/v2.0"
         }else{
             policyCopy.BaseURL = "https://login.chinacloudapi.cn/common/oauth2"
@@ -397,14 +397,14 @@ export default function OneDriveGuide(props) {
                                         row
                                     >
                                         <FormControlLabel
-                                            value={"https://graph.microsoft.com/v1.0"}
+                                            value={"https://graph.microsoft.com/v1.0/me"}
                                             control={
                                                 <Radio color={"primary"} />
                                             }
                                             label="国际版"
                                         />
                                         <FormControlLabel
-                                            value={"https://microsoftgraph.chinacloudapi.cn/v1.0"}
+                                            value={"https://microsoftgraph.chinacloudapi.cn/v1.0/me"}
                                             control={
                                                 <Radio color={"primary"} />
                                             }
